@@ -166,7 +166,7 @@
                                     </p>
                                 </div>
                                 <!-- ИЗМЕНЕННАЯ КНОПКА СКАЧИВАНИЯ -->
-                                <a href="#" class="btn btn-primary" onclick="downloadTextResume()">
+                                <a href="assets/resume.pdf" class="btn btn-primary" onclick="downloadTextResume()">
                                     <i class="bi bi-download me-2"></i>Скачать резюме
                                 </a>
                             </div>
@@ -305,56 +305,15 @@
     
     <!-- ДОБАВЛЕННЫЙ СКРИПТ ДЛЯ СКАЧИВАНИЯ РЕЗЮМЕ -->
     <script>
-    function downloadTextResume() {
-        const resumeContent = `Резюме - Войкин Вадим Евгеньевич
-
-Личная информация:
------------------
-Должность: Студент-разработчик
-Группа: ЭФБО-14-24
-Email: voykin.v.e@edu.mirea.ru
-GitHub: ceoOFhvh
-Местоположение: Москва, Россия
-Телефон: +7 (999) 999-99-99
-
-Навыки:
--------
-• HTML/CSS - 90%
-• JavaScript - 80% 
-• Bootstrap - 85%
-• React - 60%
-
-Проекты:
---------
-• Личный сайт (HTML, CSS, JavaScript)
-• Todo-приложение (JavaScript)
-• Интернет-магазин (React)
-• Портфолио (Bootstrap)
-
-Образование:
-------------
-МИРЭА - Российский технологический университет
-Факультет: Информационные технологии  
-Специальность: Веб-разработка
-Группа: ЭФБО-14-24
-
-Обо мне:
---------
-Студент, увлекаюсь веб-разработкой. Изучаю HTML, CSS и JavaScript.
-Люблю создавать красивые и функциональные сайты.
-В свободное время занимаюсь созданием пет-проектов и изучаю новые технологии.`;
-
-        const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'resume_Войкин_Вадим.txt';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-    }
-    </script>
+function downloadTextResume() {
+    const link = document.createElement('a');
+    link.href = 'assets/resume.pdf';
+    link.download = 'resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
 </body>
 
 </html>
